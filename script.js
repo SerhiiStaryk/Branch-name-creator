@@ -17,12 +17,12 @@ taskNameElement.addEventListener('input', () => {
 taskDescriptionElement.addEventListener('input', () => {
   sanitizedName = taskDescriptionElement.value
     .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
 });
 
 createBranchNameBtn.addEventListener('click', () => {
-  resultFieldElement.textContent = `${taskNameValue}/${sanitizedName}`;
+  resultFieldElement.textContent = `${taskNameValue}${taskNameValue ? '/': ''}${sanitizedName}`;
 })
 
 const copyBranchName = () => {
@@ -36,7 +36,7 @@ const copyBranchName = () => {
     // Copy the selected text to the clipboard
     document.execCommand("copy");
     window.getSelection().removeAllRanges(); // Deselect the text
-    alert("Text copied to clipboard");
+    // alert("Text copied to clipboard");
   } catch (err) {
     console.error("Copy to clipboard failed: ", err);
   }
