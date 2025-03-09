@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { getFromLocalStorage, setToLocalStorage } from '../../util/localhost';
 
 const isDarkMode = getFromLocalStorage('darkMode') === true;
 
-const ThemeSwitcher: React.FC = () => {
+const ThemeSwitcher: FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(isDarkMode);
 
   const toggleDarkMode = () => {
@@ -26,9 +26,9 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`px-4 py-2 rounded-full ${darkMode ? 'bg-yellow-400' : 'bg-gray-800'} ${
-        darkMode ? 'text-gray-900' : 'text-white'
-      } transition-colors duration-200`}
+      className={`px-4 py-1 rounded-full transition-colors duration-200
+        ${darkMode ? 'bg-yellow-400' : 'bg-gray-800'}
+        ${darkMode ? 'text-gray-900' : 'text-white'} `}
     >
       {darkMode ? 'Light Mode' : 'Dark Mode'}
     </button>

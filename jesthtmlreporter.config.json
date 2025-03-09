@@ -1,0 +1,6 @@
+{
+  "pageTitle": "Your test suite",
+  "outputPath": "test-report/index.html",
+  "includeFailureMsg": true,
+  "sort": "status"
+}

@@ -1,5 +1,5 @@
 import { Logo } from '../../icon';
-import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const Header: React.FC = () => (
   <div className='flex mb-10'>
