@@ -4,8 +4,8 @@ import CreateForm from '.';
 
 describe('CreateForm', () => {
   test('should render render CreateForm component', () => {
-    const mockFn = () => {};
-    render(<CreateForm onSetBranchName={mockFn} />);
+    const mockFn = jest.fn();
+    render(<CreateForm onSetBranchNameAndCommit={mockFn} />);
     expect(true).toBeTruthy();
   });
 });
