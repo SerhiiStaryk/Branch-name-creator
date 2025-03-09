@@ -12,9 +12,9 @@ jest.mock('../../store/ui-context', () => ({
 
 describe('CopyContainer', () => {
   test('should render CopyContainer component', () => {
-    const branchName = 'mock branch name';
+    const value = 'mock branch name';
 
-    render(<CopyContainer branchName={branchName} />);
+    render(<CopyContainer value={value} />);
     expect(true).toBeTruthy();
   });
 });
