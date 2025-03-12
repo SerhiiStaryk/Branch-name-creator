@@ -1,7 +1,7 @@
 import { Logo } from '../../icon';
 import ThemeSwitcher from '../ThemeSwitcher';
 
-const Header: React.FC = () => (
+const Header = () => (
   <div className='flex mb-10'>
     <Logo />
     <h1 className='ml-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl'>

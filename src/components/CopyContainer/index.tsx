@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Copy } from '../../icon';
 import Toast from '../Toast';
@@ -8,7 +7,7 @@ interface CopyContainerProps {
   value: string;
 }
 
-const CopyContainer: FC<CopyContainerProps> = ({ value }) => {
+const CopyContainer = ({ value }: CopyContainerProps) => {
   const { isToast } = useUi();
   const dispatch = useUiDispatch();
 

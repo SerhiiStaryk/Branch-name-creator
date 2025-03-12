@@ -1,9 +1,9 @@
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect } from 'react';
 import { getFromLocalStorage, setToLocalStorage } from '../../util/localhost';
 
 const isDarkMode = getFromLocalStorage('darkMode') === true;
 
-const ThemeSwitcher: FC = () => {
+const ThemeSwitcher = () => {
   const [darkMode, setDarkMode] = useState<boolean>(isDarkMode);
 
   const toggleDarkMode = () => {

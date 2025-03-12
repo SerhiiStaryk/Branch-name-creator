@@ -7,7 +7,7 @@ interface ToastProps {
   message: string;
 }
 
-const Toast: React.FC<ToastProps> = ({ message }) => {
+const Toast = ({ message }: ToastProps) => {
   const dispatch = useUiDispatch();
 
   const handleCloseToast = () => {
