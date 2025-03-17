@@ -1,4 +1,4 @@
-export type Type = 'feat' | 'fix' | 'docs' | 'style' | 'refactor' | 'test' | 'chore';
+export type Type = 'feat' | 'docs' | 'style' | 'refactor' | 'test' | 'chore' | 'bug';
 
 export type ItemTypeType = { type: Type; description: string };
 
@@ -8,7 +8,7 @@ export const types: ItemTypeType[] = [
     description: 'new feature for the user, not a new feature for build script',
   },
   {
-    type: 'fix',
+    type: 'bug',
     description: 'bug fix for the user, not a fix to a build script',
   },
   {
