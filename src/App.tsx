@@ -22,6 +22,10 @@ const App = () => {
         <CopyContainer value={branchName} />
         <Label label='Commit' />
         <CopyContainer value={commit} />
+        <Label label='Create commit' />
+        <CopyContainer value={`git commit -m "${commit}"`} />
+        <Label label='Create branch' />
+        <CopyContainer value={`git switch -c ${branchName}`} />
       </div>
     </div>
   );
