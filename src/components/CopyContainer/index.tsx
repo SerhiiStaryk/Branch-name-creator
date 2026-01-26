@@ -21,7 +21,7 @@ const CopyContainer = ({ value }: CopyContainerProps) => {
   return (
     <>
       <AnimatePresence>{isToast && <Toast message='Copy successful' />}</AnimatePresence>
-      <span className='bg-gray-200 inline-flex items-center min-h-14 mb-8 p-4 pl-6 relative rounded-lg sm:text-base space-x-4 text-left text-sm w-full'>
+      <span className='bg-gray-200 inline-flex items-center min-h-14 mb-4 p-4 pl-6 relative rounded-lg sm:text-base space-x-4 text-left text-sm w-full'>
         <span className='text-gray-500'>{value}</span>
         {value && (
           <span

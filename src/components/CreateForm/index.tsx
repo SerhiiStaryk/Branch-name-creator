@@ -42,7 +42,7 @@ const CreateForm = ({ onSetBranchNameAndCommit }: CreateFormProps) => {
 
     onSetBranchNameAndCommit({
       branchName: `${type}/OMS-${trimAndUppercase(name)}-${normalizeText(description)}`,
-      commit: `${type}: #${name} ${description}`,
+      commit: `#${name} ${type}: ${description}`,
     });
   };
 
