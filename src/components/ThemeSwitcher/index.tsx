@@ -1,36 +1,24 @@
-import { useState, useEffect } from 'react';
-import { getFromLocalStorage, setToLocalStorage } from '../../util/localhost';
+import { useEffect } from 'react';
 
-const isDarkMode = getFromLocalStorage('darkMode') === true;
+interface ThemeSwitcherProps {
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}
 
-const ThemeSwitcher = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(isDarkMode);
-
-  const toggleDarkMode = () => {
-    setDarkMode(prevMode => {
-      setToLocalStorage('darkMode', !prevMode);
-
-      return !prevMode;
-    });
-  };
-
+const ThemeSwitcher = ({ isDarkMode, toggleTheme }: ThemeSwitcherProps) => {
   useEffect(() => {
-    document.body.classList.toggle('dark', darkMode);
-    document.documentElement.classList.toggle('dark', darkMode);
-
-    if (isDarkMode) {
-      setToLocalStorage('darkMode', darkMode);
-    }
-  }, [darkMode]);
+    document.body.classList.toggle('dark', isDarkMode);
+    document.documentElement.classList.toggle('dark', isDarkMode);
+  }, [isDarkMode]);
 
   return (
     <button
-      onClick={toggleDarkMode}
+      onClick={toggleTheme}
       className={`px-4 py-1 rounded-full transition-colors duration-200
-        ${darkMode ? 'bg-yellow-400' : 'bg-gray-800'}
-        ${darkMode ? 'text-gray-900' : 'text-white'} `}
+        ${isDarkMode ? 'bg-yellow-400' : 'bg-gray-800'}
+        ${isDarkMode ? 'text-gray-900' : 'text-white'} `}
     >
-      {darkMode ? 'Light Mode' : 'Dark Mode'}
+      {isDarkMode ? 'Light Mode' : 'Dark Mode'}
     </button>
   );
 };
